@@ -1,13 +1,19 @@
 exports.min = function min(array) {
-    let arr = array.sort();
-    return arr[0];
+    if (array.length == '') { return 0; } else
+        return Math.min.apply(null, array);
+
 }
 
 exports.max = function max(array) {
-    return 0;
+    return Math.max.apply(null, array);
 }
 
 exports.avg = function avg(array) {
-    let result = array.reduce((sum, current) => (sum + current) / 2, 0);
-    return result;
+    let sum = 0;
+    let len = array.length;
+    for (var i = 0; i < array.length; i++) {
+        sum += array[i];
+        let result = sum / len;
+        return result;
+    }
 }
